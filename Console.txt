@@ -1,0 +1,33 @@
+> library(RcmdrPlugin.IPSUR) 
+> data(RcmdrTestDrive) 
+> 
+> #Q1
+> mean(RcmdrTestDrive$salary)
+[1] 724.5164
+> median(RcmdrTestDrive$salary)
+[1] 710.15
+> summary(RcmdrTestDrive$salary)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  377.2   621.1   710.1   724.5   808.6  1156.2 
+> hist(RcmdrTestDrive$salary, col="red", main="Sal frequency", xlab="Salary")  
+> mean(RcmdrTestDrive$reduction)
+[1] 223.631
+> median(RcmdrTestDrive$reduction)
+[1] 139.5
+> summary(RcmdrTestDrive$reduction)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.00   78.75  139.50  223.63  335.50 1632.00 
+> hist(RcmdrTestDrive$reduction, col="green", main="Reduction frequency", xlab="Reduction")   
+> 
+> #Q2
+> library(lawstat)
+> symmetry.test(RcmdrTestDrive[,"salary"], boot = FALSE)
+
+	Symmetry test by Miao, Gel, and Gastwirth (2006)
+
+data:  RcmdrTestDrive[, "salary"]
+Test statistic = 1.6864, p-value = 0.09172
+alternative hypothesis: the distribution is asymmetric.
+
+> #Median is appropriate
+>
